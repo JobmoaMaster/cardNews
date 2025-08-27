@@ -1,5 +1,5 @@
 /* --------------------------------
- * Base Styles & Variables from JSON
+ * Base Styles & Variables
  * -------------------------------- */
 :root {
     /* Color Palette */
@@ -8,20 +8,17 @@
     --text-secondary-color: #808080;
     --accent-color: #0000ee;
     --border-color: #e0e0e0;
-
-    /* New colors for header */
-    --header-bg-color: #f7f3ed; /* 이미지 배경과 유사한 밝은 색상 */
-    --header-tag-bg: #8c5b3d; /* "미리센터 그랜드 오픈" 태그 배경색 */
+    --header-bg-color: #f7f3ed;
+    --header-tag-bg: #8c5b3d;
     --header-tag-text: #ffffff;
-    --header-title-text: #8c5b3d; /* "GRAND OPENING" 텍스트색 */
-    --header-date-text: #5e4733; /* 날짜 텍스트색 */
+    --header-title-text: #8c5b3d;
+    --header-date-text: #5e4733;
 
     /* Typography */
     --primary-font: 'Open Sans', sans-serif;
-    --heading-font: 'Avenir LT W01 35 Light1475496', 'Open Sans', sans-serif; /* Avenir 폴백 폰트 지정 */
     --font-weight-normal: 400;
     --font-weight-bold: 700;
-    --font-weight-extrabold: 800; /* GRAND OPENING 에 사용할 폰트 두께 */
+    --font-weight-extrabold: 800;
 
     /* Design System */
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -47,7 +44,6 @@ body {
     height: 1px;
     overflow: hidden;
 }
-
 .skip-link:focus {
     position: static;
     width: auto;
@@ -60,14 +56,14 @@ body {
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 20px 20px;
+    padding: 20px;
 }
 
 .main-header {
     text-align: center;
     margin-bottom: 40px;
-    background-color: var(--header-bg-color); /* 배경색 추가 */
-    padding: 5px 20px;
+    background-color: var(--header-bg-color);
+    padding: 15px 20px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
 }
@@ -82,64 +78,32 @@ body {
 /* --------------------------------
  * Components
  * -------------------------------- */
-/* Header Design */
 .header-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* 요소들 간의 간격 */
-    position: relative; /* 배경 이미지를 위해 */
-    background: url('http://googleusercontent.com/file_content/0') no-repeat center center/cover; /* 이미지 사용 */
-    min-height: 150px; /* 헤더 최소 높이 */
+    gap: 10px;
     justify-content: center;
-    border-radius: var(--radius-md);
-    overflow: hidden;
 }
-
 .header-tag {
-    background-color: var(--header-tag-bg);
-    color: var(--header-tag-text);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0.5px;
-    z-index: 2; /* 텍스트가 배경 이미지 위에 오도록 */
-    margin-bottom: 10px;
-}
-
-.main-title {
-    font-family: var(--primary-font);
-    font-size: 48px; /* 크게 */
-    font-weight: var(--font-weight-extrabold); /* 더 두껍게 */
-    color: var(--header-title-text); /* 이미지에서 보이는 색상과 유사하게 */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 그림자 추가로 입체감 */
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    z-index: 2;
-}
-
-.header-date {
-    font-family: var(--primary-font);
     font-size: 16px;
-    font-weight: var(--font-weight-normal);
-    color: var(--header-date-text);
-    background-color: rgba(255, 255, 255, 0.7); /* 날짜 배경 추가 */
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 2;
-    margin-top: 10px;
+    font-weight: var(--font-weight-bold);
 }
-
+.main-title {
+    font-size: 28px;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary-color);
+    margin: 0;
+    line-height: 1.2;
+}
 
 .cardnews-slider {
     position: relative;
     width: 100%;
     box-shadow: var(--shadow-md);
     border-radius: var(--radius-md);
-    background-color: var(--background-color); /* 슬라이더 배경색 */
-    padding-bottom: 50px; /* 페이지네이션 공간 확보 */
+    background-color: var(--background-color);
+    padding-bottom: 50px;
 }
 
 .slider-viewport {
@@ -156,63 +120,89 @@ body {
 .slide {
     flex: 0 0 100%;
     box-sizing: border-box;
-    display: flex; /* 이미지와 설명을 나란히 배치 */
-    flex-direction: column; /* 기본적으로 세로 배치 */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 20px; /* 슬라이드 내부 여백 */
 }
 
-.slide a {
-    display: block;
+.slide-content-wrapper {
+    position: relative;
     width: 100%;
-    max-width: 400px; /* 이미지 최대 너비 제한 */
-    aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
-    text-decoration: none;
-    border-radius: var(--radius-md); /* 이미지도 둥근 모서리 */
+    max-width: 500px; /* 이미지 최대 너비 */
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md);
     overflow: hidden;
-    margin-bottom: 20px; /* 이미지와 설명 사이 간격 */
+    cursor: pointer;
 }
-
-.slide img {
+.slide-content-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지가 잘리지 않고 비율에 맞게 채워짐 */
+    object-fit: contain; /* 이미지가 잘리지 않도록 contain으로 변경 */
     display: block;
+    pointer-events: none; /* 부모(wrapper)에서 클릭 이벤트 처리 */
 }
 
-/* Image Description Section */
+/* 첫 번째 슬라이드의 '지금 시작하기' 버튼 스타일 */
+.action-button {
+    position: absolute;
+    bottom: 9.5%; /* 이미지 내 버튼 위치에 맞게 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38%; /* 이미지 내 버튼 너비에 맞게 조정 */
+    height: 10%; /* 이미지 내 버튼 높이에 맞게 조정 */
+    background-color: transparent; /* 배경 투명 */
+    border: none;
+    color: transparent; /* 텍스트 숨김 */
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 5;
+    font-size: 0; /* 텍스트 크기 0으로 설정 */
+}
+
+/* 마지막 슬라이드 스타일 */
+.slide:last-child {
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .slide:last-child {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .slide-description {
     text-align: center;
-    max-width: 300px; /* 설명 텍스트 너비 제한 */
+    max-width: 300px;
     padding: 0 10px;
 }
-
 .description-title {
     font-size: 22px;
     font-weight: var(--font-weight-bold);
     color: var(--text-primary-color);
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
-
 .description-text {
     font-size: 15px;
     color: var(--text-secondary-color);
     margin-bottom: 15px;
 }
-
 .description-link {
-    display: inline-flex; /* 아이콘과 텍스트 정렬 */
-    align-items: center;
-    gap: 5px;
+    display: inline-block;
     color: var(--accent-color);
     font-weight: var(--font-weight-bold);
     text-decoration: none;
     transition: color var(--transition-normal);
+    padding: 10px 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 25px;
 }
-
 .description-link:hover {
-    color: var(--text-primary-color);
+    color: white;
+    background-color: var(--accent-color);
 }
 
 /* Slider Controls */
@@ -233,17 +223,14 @@ body {
     justify-content: center;
     transition: background-color var(--transition-normal);
     z-index: 10;
-    box-shadow: var(--shadow-md); /* 버튼에도 그림자 추가 */
+    box-shadow: var(--shadow-md);
 }
-
 .slider-button:hover {
     background-color: rgba(255, 255, 255, 1);
 }
-
 .slider-button.prev {
     left: 10px;
 }
-
 .slider-button.next {
     right: 10px;
 }
@@ -257,77 +244,29 @@ body {
     display: flex;
     gap: 8px;
 }
-
 .pagination-dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: var(--border-color); /* 점 색상 변경 */
+    background-color: var(--border-color);
     cursor: pointer;
     transition: background-color var(--transition-normal);
-    border: 1px solid var(--text-secondary-color); /* 테두리 추가 */
+    border: 1px solid var(--text-secondary-color);
 }
-
 .pagination-dot.active {
-    background-color: var(--accent-color); /* 활성 점 색상 */
+    background-color: var(--accent-color);
     border-color: var(--accent-color);
 }
-
 
 /* Responsive Design */
 @media (min-width: 768px) {
     .main-header {
-        padding: 5px 40px;
+        padding: 20px 40px;
     }
-
-    .header-content {
-        min-height: 120px;
-    }
-
     .main-title {
-        font-size: 40px; /* 데스크톱에서 더 크게 */
+        font-size: 34px;오후 6:04 2025-08-27
     }
-
-    .header-date {
-        font-size: 18px;
-    }
-
-    .slide {
-        flex-direction: row; /* 데스크톱에서는 가로 배치 */
-        justify-content: center;
-        gap: 40px; /* 이미지와 설명 사이 간격 */
-        padding: 40px;
-    }
-
-    .slide a {
-        width: 100%; /* 이미지 너비 조정 */
-        max-width: 700px;
-        margin-bottom: 0;
-    }
-
- .slide span {
-        width: 100%; /* 이미지 너비 조정 */
-        max-width: 500px;
-        margin-bottom: 0;
-    }
-   .slide div {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: flex-start;
-      flex-direction: column;
-  }
-
-    .slide-description {
-        text-align: left; /* 설명 텍스트 왼쪽 정렬 */
-        width: 30%;
-        max-width: 400px;
-    }
-
-    .description-title {
-        font-size: 27px;
-    }
-
-    .description-text {
-        font-size: 18px;
+    .slide-content-wrapper {
+        max-width: 580px; /* 데스크탑에서 이미지 크기 조정 */
     }
 }

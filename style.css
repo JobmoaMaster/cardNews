@@ -196,7 +196,7 @@ body {
 }
 
 .description-text {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--text-secondary-color);
     margin-bottom: 15px;
 }
@@ -304,6 +304,18 @@ body {
         max-width: 700px;
         margin-bottom: 0;
     }
+
+ .slide span {
+        width: 100%; /* 이미지 너비 조정 */
+        max-width: 500px;
+        margin-bottom: 0;
+    }
+   .slide div {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      flex-direction: column;
+  }
 
     .slide-description {
         text-align: left; /* 설명 텍스트 왼쪽 정렬 */

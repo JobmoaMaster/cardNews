@@ -60,14 +60,14 @@ body {
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px 20px;
 }
 
 .main-header {
     text-align: center;
     margin-bottom: 40px;
     background-color: var(--header-bg-color); /* 배경색 추가 */
-    padding: 30px 20px;
+    padding: 5px 20px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
 }
@@ -277,7 +277,7 @@ body {
 /* Responsive Design */
 @media (min-width: 768px) {
     .main-header {
-        padding: 50px 40px;
+        padding: 5px 40px;
     }
 
     .header-content {
@@ -300,8 +300,8 @@ body {
     }
 
     .slide a {
-        width: 50%; /* 이미지 너비 조정 */
-        max-width: 450px;
+        width: 100%; /* 이미지 너비 조정 */
+        max-width: 700px;
         margin-bottom: 0;
     }
 
@@ -312,7 +312,7 @@ body {
     }
 
     .description-title {
-        font-size: 28px;
+        font-size: 27px;
     }
 
     .description-text {

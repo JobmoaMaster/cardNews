@@ -281,11 +281,11 @@ body {
     }
 
     .header-content {
-        min-height: 200px;
+        min-height: 120px;
     }
 
     .main-title {
-        font-size: 60px; /* 데스크톱에서 더 크게 */
+        font-size: 40px; /* 데스크톱에서 더 크게 */
     }
 
     .header-date {
